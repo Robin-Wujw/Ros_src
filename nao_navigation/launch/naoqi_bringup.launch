@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<!-- -->
+
+<launch>
+<!-- To start a map server 
+  <node name="map_server" pkg="map_server" type="map_server" args="/home/robin/catkin_ws/src/nao_navigation/maps/tiny_map.yaml"/> -->
+
+
+<!-- To start a local Bringup node on computer instead of NAO  -->
+<include file="$(find nao_bringup)/launch/nao_full_py.launch">
+<arg name="nao_ip" default="192.168.1.100"/>
+</include>
+  <!-- rviz for visulization -->
+  
+<node pkg="rviz" type="rviz" name="rviz" args="-d /home/robin/rviz.rviz"/>
+
+
+</launch>
